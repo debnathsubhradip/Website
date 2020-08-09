@@ -1,7 +1,7 @@
 # Website
 This repository hosts the website of Subhradip Debnath.
 
-If you cannot anything else other than this shit ! It may be bee cause the site is under repair :)
+If you see cannot anything else other than this shit ! It may be bee cause the site is under repair :)
 
 Please come back another time !
 
