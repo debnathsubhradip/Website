@@ -1,17 +1,27 @@
 div#page_heading{
     color: rgb(197, 197, 197);
     background-color: rgba(168, 167, 154, 0.418);
+    font-size: 2em;
+    padding: 1em;
 }
 div#maindesc{
     color: rgb(192, 192, 243);
+    font-size: 1em;
+    /* padding-left: 1em; */
 }
 body{
     background-color: rgb(39, 39, 39);
     color: white;
+    font-family: 'Fraunces', serif;
+    font-size: 1em;
+    
 }
 :link{
     color: rgb(181, 255, 255);
 }
 :visited{
     color: rgb(206, 159, 159);
+}
+a{
+    font-style: italic;
 }
