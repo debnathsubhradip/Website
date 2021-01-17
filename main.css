@@ -1,7 +1,17 @@
 div#page_heading{
-    color: red;
-    background-color: rgb(255, 246, 164);
+    color: rgb(197, 197, 197);
+    background-color: rgba(168, 167, 154, 0.418);
 }
 div#maindesc{
-    color: rgb(10, 10, 85);
+    color: rgb(192, 192, 243);
+}
+body{
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+:link{
+    color: rgb(181, 255, 255);
+}
+:visited{
+    color: rgb(206, 159, 159);
 }
