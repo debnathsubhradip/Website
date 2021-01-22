@@ -1,0 +1,17 @@
+#interests{
+    font-family: 'Playfair Display', serif;
+    background-color: rgba(240, 248, 255, 0.253);
+    width: 600px;
+    margin: 50px auto;
+    padding: 2em;
+    border: solid 5px rgba(14, 14, 14, 0.493);
+}
+#interestheading{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+}
+div.detaildesc{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
