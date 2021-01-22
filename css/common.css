@@ -1,7 +1,7 @@
 header#page_heading{
     color: rgb(197, 197, 197);
     background-color: rgba(168, 167, 154, 0.418);
-    font-size: 2em;
+    /* font-size: 2em; */
     padding: 50px 20px 50px 20px;
     border: solid 5px rgba(0, 0, 0, 0.247);
     margin: 20px 20px 50px 20px;
@@ -11,6 +11,7 @@ header#page_heading{
 }
 #headerlogo{
     width: 25%;
+    padding-bottom: 1em;
 }
 #headertitle{
     width: 100%;
@@ -19,13 +20,10 @@ header#page_heading{
 div#maindesc{
     color: rgb(192, 192, 243);
     font-size: 1em;
-    width: 500px;
-    margin: auto;
-    padding-left: 100px;
+    text-align: center;
 }
 #cv_div{
-    width: 500px;
-    margin: auto;
+   text-align: center;
 }
 body{
     background-color: rgb(39, 39, 39);
@@ -47,7 +45,7 @@ a{
 /* Navigation bar */
 .navbar{
     background-color: black;
-    border-radius: 30px;
+    /* border-radius: 30px; */
 }
 .navbar ul{
     overflow: auto;

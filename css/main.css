@@ -1,8 +1,8 @@
 #interests{
     font-family: 'Playfair Display', serif;
     background-color: rgba(240, 248, 255, 0.253);
-    width: 600px;
-    margin: 50px auto;
+    width: 55%;
+    margin: auto;
     padding: 2em;
     border: solid 5px rgba(14, 14, 14, 0.493);
 }
@@ -13,5 +13,12 @@
 div.detaildesc{
     background-color: rgb(255, 255, 255);
     color: black;
+}
+ul#researchpaper li{
+    /* background-color: yellow; */
+    list-style: none;
+}
+ul#researchchapter li{
+    list-style:none;
 }
 
