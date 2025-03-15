@@ -1,4 +1,5 @@
 {
+    "active": "true",
     "about": {
       "description": "A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.",
       "certifications": ["AWS", "GCP", "Microsoft Azure", "Oracle Cloud"]
