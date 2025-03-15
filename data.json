@@ -1,0 +1,104 @@
+{
+    "about": {
+      "description": "A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.",
+      "certifications": ["AWS", "GCP", "Microsoft Azure", "Oracle Cloud"]
+    },
+    "education": [
+      {
+        "degree": "Master of Engineering",
+        "specialization": "Cloud Computing",
+        "university": "Chandigarh University"
+      },
+      {
+        "degree": "Bachelor of Technology",
+        "field": "Computer Science Engineering",
+        "university": "Institute of Engineering & Management, Kolkata",
+        "cgpa": 8.9
+      },
+      {
+        "degree": "Higher Secondary AISSCE",
+        "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
+        "cgpa": 9.4
+      },
+      {
+        "degree": "Secondary AISSE",
+        "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
+        "cgpa": 9.6
+      }
+    ],
+    "languages": [
+      {"name": "English", "proficiency": "Excellent"},
+      {"name": "Bengali", "proficiency": "Excellent"},
+      {"name": "Hindi", "proficiency": "Excellent"}
+    ],
+    "hobbies": [
+      {"name": "Singing", "credential": "Diploma"},
+      {"name": "Painting", "credential": "Diploma"},
+      {"name": "Gaming", "type": "FPS and Mobile"}
+    ],
+    "publications": [
+      {
+        "title": "Technology Assistance in Learning English",
+        "doi": "https://doi.org/10.15864/ijelts.2315"
+      },
+      {
+        "title": "Next Generation Rainwater Harvesters and Smart Ground Water Replenishment",
+        "doi": "https://ijcaes.smartsociety.org/volume1_issue4.pdf"
+      },
+      {
+        "title": "Security and Privacy of IoT Devices in Healthcare Systems",
+        "doi": "https://doi.org/10.1002/9781119792253.ch7"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Software Developer (Research, AWS)",
+        "company": "Tata Consultancy Services Limited, Kolkata",
+        "duration": "2022 - Present"
+      },
+      {
+        "role": "Community Builder",
+        "company": "Amazon Web Services, Remote",
+        "duration": "2021 - Present"
+      },
+      {
+        "role": "Software Engineer Intern",
+        "company": "Hloov, Intern, Remote",
+        "duration": "2021 - 2021"
+      },
+      {
+        "role": "Cloud Security Associate",
+        "company": "Virtually Testing Foundation, Intern, Remote",
+        "duration": "2021 - 2021"
+      },
+      {
+        "role": "Systems Engineer Intern",
+        "company": "Haldia Dock Complex, Intern, Haldia",
+        "duration": "2021 - 2021"
+      },
+      {
+        "role": "Campus Manager",
+        "company": "Geeks for Geeks, Remote",
+        "duration": "2020 - 2021"
+      },
+      {
+        "role": "Systems Engineer Intern",
+        "company": "Deblines Pvt Ltd, Intern, Haldia",
+        "duration": "2019 - 2019"
+      }
+    ],
+    "certifications": [
+      {"name": "Microsoft Azure Fundamentals"},
+      {"name": "Microsoft Azure Administrator (AZ104)"},
+      {"name": "Microsoft Azure DevOps Engineer Expert (AZ400)"},
+      {"name": "Microsoft Azure Solutions Architect Expert (AZ305)"},
+      {"name": "AWS Certified Cloud Practitioner"},
+      {"name": "AWS Solutions Architect Associate"},
+      {"name": "AWS Solutions Architect Professional"},
+      {"name": "Google Cloud Certified Associate Cloud Engineer"},
+      {"name": "Google Cloud Certified Professional Cloud Architect"},
+      {"name": "Gremlin Certified Chaos Engineering Practitioner"},
+      {"name": "Oracle Cloud Infrastructure 2023 Certified Foundations Associate"}
+    ]
+  }
+  
