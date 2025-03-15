@@ -3,6 +3,12 @@
       "description": "A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.",
       "certifications": ["AWS", "GCP", "Microsoft Azure", "Oracle Cloud"]
     },
+    "ieee": {
+      "status": "true",
+      "membership": "IEEE Member",
+      "society": "IEEE Computer Society",
+      "contact": "subhradip@ieee.org"
+    },
     "education": [
       {
         "degree": "Master of Engineering",
