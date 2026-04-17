@@ -1,315 +1,552 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subhradip Debnath - Cloud Architect</title>
   <meta name="description" content="Subhradip Debnath. A hobby singer, and a Super Cloud Enthusiast, Cloud Architect, Engineer.">
-  <meta name="keywords" content="subhradip, debnath, official, website, cloud, architect, engineer, portfolio, tailwindcss">
+  <meta name="keywords" content="subhradip, debnath, official, website, cloud, architect, engineer, portfolio">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate on Scroll) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <!-- Favicon -->
   <link rel="icon" href="./assets/img/me.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#0ea5e9',
+            'accent-hover': '#0284c7',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc; /* slate-50 */
+    .nav-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    h1, h2, h3, h4, .font-raleway {
-      font-family: 'Raleway', sans-serif;
+
+    .nav-link {
+      position: relative;
+      color: #64748b;
+      transition: color 0.2s;
     }
-    .typed-cursor {
-      color: #4f46e5; /* indigo-600 */
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #0ea5e9;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #1a1a2e;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .skill-pill {
+      transition: all 0.2s;
+    }
+
+    .skill-pill:hover {
+      background: #0ea5e9;
+      color: white;
+      transform: scale(1.02);
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #0ea5e9, transparent);
+    }
+
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #0ea5e9;
+      border: 3px solid #fafbfc;
+      box-shadow: 0 0 0 2px #0ea5e9;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .profile-ring {
+      background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+      padding: 4px;
+    }
+
+    .btn-primary {
+      background: #0ea5e9;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #0ea5e9;
       font-weight: 600;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.6s ease forwards;
     }
   </style>
 </head>
 
-<body class="text-slate-700">
+<body class="bg-[#fafbfc] text-[#1a1a2e] font-sans antialiased">
 
   <!-- Header -->
-  <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold font-raleway text-slate-800">Subhradip.</a>
-      <nav class="hidden md:flex space-x-8">
-        <a href="#about" class="text-slate-600 hover:text-indigo-600 transition duration-300">About</a>
-        <a href="#skills" class="text-slate-600 hover:text-indigo-600 transition duration-300">Skills</a>
-        <a href="#resume" class="text-slate-600 hover:text-indigo-600 transition duration-300">Resume</a>
-        <a href="#contact" class="text-slate-600 hover:text-indigo-600 transition duration-300">Contact</a>
+  <header class="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-display font-semibold text-[#1a1a2e]">Subhradip.</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm font-medium">About</a>
+        <a href="#skills" class="nav-link text-sm font-medium">Skills</a>
+        <a href="#resume" class="nav-link text-sm font-medium">Resume</a>
+        <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
       </nav>
-       <button id="mobile-menu-button" class="md:hidden text-2xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
+      <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100">
+        <i class="fas fa-bars text-lg"></i>
       </button>
-    </div>
-     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white">
-      <a href="#about" class="block py-2 px-6 text-sm text-slate-600 hover:bg-indigo-50">About</a>
-      <a href="#skills" class="block py-2 px-6 text-sm text-slate-600 hover:bg-indigo-50">Skills</a>
-      <a href="#resume" class="block py-2 px-6 text-sm text-slate-600 hover:bg-indigo-50">Resume</a>
-      <a href="#contact" class="block py-2 px-6 text-sm text-slate-600 hover:bg-indigo-50">Contact</a>
     </div>
   </header>
 
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <button id="menu-close" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#resume" class="mobile-link">Resume</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
   <main>
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center bg-slate-50">
-      <div class="container mx-auto px-6 text-center">
-        <div data-aos="fade-up">
-            <img src="./assets/img/me.png" alt="Subhradip Debnath" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
-            <h1 class="text-4xl md:text-6xl font-extrabold font-raleway text-slate-900 mb-3">Subhradip Debnath</h1>
-            <p class="text-xl md:text-2xl text-slate-600">
-              I'm a Cloud <span id="typed-text" class="font-semibold text-indigo-600"></span>
-            </p>
-            <div class="mt-8 flex justify-center space-x-4">
-              <a href="https://twitter.com/subh_official" target="_blank" class="text-slate-500 hover:text-indigo-600 transition duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.linkedin.com/in/thesubhradip/" target="_blank" class="text-slate-500 hover:text-indigo-600 transition duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/subhradip_official/" target="_blank" class="text-slate-500 hover:text-indigo-600 transition duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
-              <a href="mailto:contact@subhradip.xyz" class="text-slate-500 hover:text-indigo-600 transition duration-300 text-2xl"><i class="far fa-envelope"></i></a>
-            </div>
-            <a href="https://drive.google.com/file/d/1l1vL149lS_y-3UDAITHqSOxYx03R7qD8/view?usp=sharing" target="_blank" class="mt-10 inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:-translate-y-1 duration-300">
-              Download My CV
-            </a>
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-slate-50 pt-20">
+      <div class="text-center px-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="profile-ring inline-block rounded-full mb-8">
+          <img src="./assets/img/me.png" alt="Subhradip Debnath" class="w-32 h-32 rounded-full object-cover bg-white">
         </div>
+        <h1 class="text-4xl md:text-6xl font-display font-bold text-[#1a1a2e] mb-4 tracking-tight">Subhradip Debnath</h1>
+        <p class="text-xl md:text-2xl text-[#64748b] mb-2">Cloud Architect & Software Developer</p>
+        <p class="text-lg text-[#0ea5e9] font-medium mb-8">
+          <span id="typed-text"></span>
+        </p>
+        <div class="flex items-center justify-center gap-4 mb-10">
+          <a href="https://twitter.com/subh_official" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/thesubhradip/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/subhradip_official/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:contact@subhradip.xyz" class="social-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+        <a href="https://drive.google.com/file/d/1l1vL149lS_y-3UDAITHqSOxYx03R7qD8/view" target="_blank" class="btn-primary">
+          <i class="fas fa-download"></i> Download CV
+        </a>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-800 font-raleway">About Me</h2>
-          <p class="mt-2 text-slate-500 max-w-2xl mx-auto">A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.</p>
+    <!-- About -->
+    <section id="about" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <span class="section-label">About Me</span>
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-[#1a1a2e] mt-3">Passionate about Cloud Architecture</h2>
+          <p class="text-[#64748b] mt-4 max-w-2xl mx-auto">A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.</p>
         </div>
-        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <div class="grid md:grid-cols-3 gap-8 items-center">
-            <div class="md:col-span-2">
-              <h3 class="text-2xl font-bold text-slate-800 mb-2">Cloud Architect &amp; Software Developer</h3>
-              <p class="text-slate-500 italic mb-4">Certified across AWS, GCP, Microsoft Azure, and Oracle Cloud.</p>
-              <p class="mb-6">
-                I specialize in designing, developing, and implementing scalable cloud-native architectures. With extensive experience in migrating server-based designs to serverless models, I am passionate about automating deployments and enhancing product analytics through innovative solutions.
-              </p>
-              <ul class="space-y-3 text-slate-600">
-                <li class="flex items-center"><i class="fas fa-globe text-indigo-500 w-5 mr-2"></i><strong>Website:</strong> <span class="ml-2">subhradip.xyz</span></li>
-                <li class="flex items-center"><i class="fas fa-city text-indigo-500 w-5 mr-2"></i><strong>City:</strong> <span class="ml-2">Kolkata, India</span></li>
-                <li class="flex items-center"><i class="fas fa-graduation-cap text-indigo-500 w-5 mr-2"></i><strong>Degree:</strong> <span class="ml-2">B.Tech & M.Eng (Pursuing)</span></li>
-                <li class="flex items-center"><i class="fas fa-at text-indigo-500 w-5 mr-2"></i><strong>Email:</strong> <span class="ml-2">contact@subhradip.xyz</span></li>
-                 <li class="flex items-center"><i class="fas fa-info-circle text-indigo-500 w-5 mr-2"></i><strong>IEEE Member:</strong> <span class="ml-2">subhradip@ieee.org</span></li>
-                <li class="flex items-center"><i class="fas fa-briefcase text-indigo-500 w-5 mr-2"></i><strong>Freelance:</strong> <span class="ml-2">Available</span></li>
-              </ul>
+
+        <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="md:col-span-2 bg-gray-50 rounded-2xl p-8 border border-gray-100">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-cloud text-[#0ea5e9] text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-display font-semibold text-[#1a1a2e]">Cloud Architect & Developer</h3>
+                <p class="text-[#64748b] text-sm italic mt-1">Certified across AWS, GCP, Microsoft Azure & Oracle Cloud</p>
+              </div>
             </div>
-            <div class="text-center">
-              <img src="./assets/img/profile-img.jpg" class="rounded-xl shadow-md w-full max-w-xs mx-auto" alt="Subhradip Debnath Profile Picture">
+            <p class="text-[#64748b] leading-relaxed mb-8">
+              I specialize in designing, developing, and implementing scalable cloud-native architectures. With extensive experience in migrating server-based designs to serverless models, I am passionate about automating deployments and enhancing product analytics through innovative solutions.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-3">
+                <i class="fas fa-globe text-[#0ea5e9]"></i>
+                <span class="text-sm text-[#64748b]">subhradip.xyz</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-map-marker-alt text-[#0ea5e9]"></i>
+                <span class="text-sm text-[#64748b]">Kolkata, India</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-graduation-cap text-[#0ea5e9]"></i>
+                <span class="text-sm text-[#64748b]">B.Tech & M.Eng (Pursuing)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-briefcase text-[#0ea5e9]"></i>
+                <span class="text-sm text-[#64748b]">Freelance Available</span>
+              </div>
             </div>
           </div>
+          <div class="card-hover bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col items-center justify-center text-center">
+            <img src="./assets/img/profile-img.jpg" alt="Profile" class="w-full rounded-xl mb-4">
+                      </div>
         </div>
       </div>
     </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 font-raleway">My Skills</h2>
-                <p class="mt-2 text-slate-500">A collection of technologies and tools I'm proficient with. ❤️</p>
-            </div>
-            <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="100">
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">AWS</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Azure</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">GCP</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Python</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Java</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Node.js</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">JavaScript</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">HTML</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">CSS</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Git</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">DevOps</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Serverless</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Cloud Architecture</span>
-                <span class="bg-white text-slate-700 font-medium py-2 px-5 rounded-full shadow-sm hover:bg-indigo-500 hover:text-white transition-all duration-300">Chaos Engineering</span>
-            </div>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 bg-[#fafbfc]">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <span class="section-label">Expertise</span>
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-[#1a1a2e] mt-3">Skills & Technologies</h2>
+          <p class="text-[#64748b] mt-4">A collection of technologies and tools I'm proficient with.</p>
         </div>
+
+        <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="100">
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">AWS</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Azure</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">GCP</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Python</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Java</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Node.js</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">JavaScript</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Git</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">DevOps</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Serverless</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Cloud Architecture</span>
+          <span class="skill-pill bg-white border border-gray-200 px-5 py-2.5 rounded-full text-sm font-medium text-[#64748b]">Chaos Engineering</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-800 font-raleway">My Journey</h2>
-          <p class="mt-2 text-slate-500">A detailed overview of my professional and educational background.</p>
+    <!-- Resume -->
+    <section id="resume" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <span class="section-label">Journey</span>
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-[#1a1a2e] mt-3">My Resume</h2>
+          <p class="text-[#64748b] mt-4">A detailed overview of my professional and educational background.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-12">
-          
-          <!-- Professional Experience Column -->
+          <!-- Experience -->
           <div data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-briefcase text-indigo-500 mr-3"></i>Professional Experience</h3>
-            <div class="space-y-8 relative border-l-2 border-indigo-200 pl-8">
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-1.5"></div>
-                <div>
-                  <h4 class="font-semibold text-lg text-slate-800">Software Developer (Research, AWS)</h4>
-                  <p class="text-indigo-600 font-medium text-sm mb-1">2022 - Present | Tata Consultancy Services</p>
-                  <ul class="list-disc list-inside mt-2 text-slate-600 space-y-1">
-                    <li>Contributed in design, development, and implementation of Cloud Architecture.</li>
-                    <li>Trained and mentored teammates on Cloud Architecting and DevOps.</li>
-                    <li>Researched and suggested new ideas for automating product deployment.</li>
+            <h3 class="text-xl font-display font-semibold text-[#1a1a2e] mb-8 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center"><i class="fas fa-briefcase text-[#0ea5e9]"></i></span>
+              Experience
+            </h3>
+            <div class="relative pl-8">
+              <div class="timeline-line"></div>
+
+              <div class="mb-10 relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">Software Developer (Research, AWS)</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">2022 - Present | Tata Consultancy Services</p>
+                  <ul class="mt-4 text-[#64748b] text-sm space-y-2">
+                    <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-[#0ea5e9]"></i>Contributed in design, development, and implementation of Cloud Architecture</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-[#0ea5e9]"></i>Trained and mentored teammates on Cloud Architecting and DevOps</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-[#0ea5e9]"></i>Researched and suggested new ideas for automating product deployment</li>
                   </ul>
                 </div>
+              </div>
 
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-36"></div>
-                 <div>
-                  <h4 class="font-semibold text-lg text-slate-800">AWS Community Builder</h4>
-                  <p class="text-indigo-600 font-medium text-sm mb-1">2021 - Present | Amazon Web Services</p>
+              <div class="mb-10 relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">AWS Community Builder</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">2021 - Present | Amazon Web Services</p>
                 </div>
-                
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-52"></div>
-                <div>
-                  <h4 class="font-semibold text-lg text-slate-800">Various Internships</h4>
-                  <p class="text-indigo-600 font-medium text-sm mb-1">2019 - 2021</p>
-                   <p class="text-slate-600 text-sm">Hloov, Virtually Testing Foundation, Haldia Dock Complex, Deblines Pvt Ltd</p>
-                </div>
-            </div>
-          </div>
+              </div>
 
-          <!-- Education & More Column -->
-          <div data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-graduation-cap text-indigo-500 mr-3"></i>Education</h3>
-             <div class="space-y-8 relative border-l-2 border-indigo-200 pl-8">
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-1.5"></div>
-                <div>
-                    <h4 class="font-semibold text-lg text-slate-800">Master of Engineering - Cloud Computing</h4>
-                    <p class="text-indigo-600 font-medium text-sm mb-1">Chandigarh University (Pursuing)</p>
-                    <p class="text-slate-600">Latest developments and research work on Cloud Computing Technologies.</p>
-                </div>
-
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-32"></div>
-                <div>
-                    <h4 class="font-semibold text-lg text-slate-800">Bachelor of Technology - Computer Science</h4>
-                    <p class="text-indigo-600 font-medium text-sm mb-1">Institute of Engineering & Management, Kolkata</p>
-                </div>
-                
-                <div class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-1.5 top-48"></div>
-                <div>
-                    <h4 class="font-semibold text-lg text-slate-800">Higher & Secondary School</h4>
-                    <p class="text-indigo-600 font-medium text-sm mb-1">Bhavan's Netaji Subhash Chandra Bose Vidyaniketan</p>
-                </div>
-             </div>
-          </div>
-        </div>
-        
-        <!-- Certifications and Publications -->
-        <div class="grid md:grid-cols-2 gap-12 mt-16">
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-certificate text-indigo-500 mr-3"></i>Certifications</h3>
-                <div class="space-y-2 text-slate-600">
-                    <p>✓ <strong>AWS:</strong> Solutions Architect Professional, Solutions Architect Associate, Cloud Practitioner</p>
-                    <p>✓ <strong>Microsoft Azure:</strong> Solutions Architect Expert, DevOps Engineer Expert, Administrator Associate, Fundamentals</p>
-                    <p>✓ <strong>Google Cloud (GCP):</strong> Professional Cloud Architect, Associate Cloud Engineer</p>
-                    <p>✓ <strong>Oracle Cloud (OCI):</strong> Foundations Associate</p>
-                    <p>✓ <strong>Other:</strong> Gremlin Certified Chaos Engineering Practitioner</p>
-                </div>
-            </div>
-             <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-book-open text-indigo-500 mr-3"></i>Publications</h3>
-                <ul class="space-y-3">
-                    <li><a href="https://doi.org/10.1002/9781119792253.ch7" target="_blank" class="text-indigo-600 hover:underline">Security and Privacy of IoT Devices in Healthcare Systems</a></li>
-                    <li><a href="https://ijcaes.smartsociety.org/volume1_issue4.pdf" target="_blank" class="text-indigo-600 hover:underline">Next Generation Rainwater Harvesters</a></li>
-                    <li><a href="https://doi.org/10.15864/ijelts.2315" target="_blank" class="text-indigo-600 hover:underline">Technology Assistance in Learning English</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Hobbies & Languages -->
-         <div class="grid md:grid-cols-2 gap-12 mt-16">
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-palette text-indigo-500 mr-3"></i>Hobbies</h3>
-                 <div class="flex flex-wrap gap-4">
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">Singing (Diploma)</span>
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">Painting (Diploma)</span>
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">Gaming</span>
-                 </div>
-            </div>
-             <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-language text-indigo-500 mr-3"></i>Languages</h3>
-                <div class="flex flex-wrap gap-4">
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">English (Excellent)</span>
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">Bengali (Excellent)</span>
-                    <span class="bg-slate-100 text-slate-700 py-1 px-3 rounded-md">Hindi (Excellent)</span>
-                </div>
-            </div>
-        </div>
-
-      </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 font-raleway">Get In Touch</h2>
-                <p class="mt-2 text-slate-500 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
-            </div>
-            <div class="max-w-lg mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
-              <div class="bg-white p-8 rounded-xl shadow-lg">
-                <i class="far fa-paper-plane text-4xl text-indigo-500 mb-4"></i>
-                <h3 class="text-2xl font-bold text-slate-800">Let's Connect</h3>
-                <p class="text-slate-500 mt-2 mb-6">Feel free to reach out via email, Telegram, or connect with me on social media.</p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="mailto:contact@subhradip.xyz" class="w-full sm:w-auto inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:-translate-y-1 duration-300">
-                      Say Hello
-                    </a>
-                    <a href="https://t.me/socialistalex" target="_blank" class="w-full sm:w-auto inline-block bg-sky-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-sky-600 transition transform hover:-translate-y-1 duration-300">
-                      <i class="fab fa-telegram-plane mr-2"></i> Telegram Me
-                    </a>
+              <div class="relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">Various Internships</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">2019 - 2021</p>
+                  <p class="text-[#64748b] text-sm mt-2">Hloov, Virtually Testing Foundation, Haldia Dock Complex, Deblines Pvt Ltd</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Education -->
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-display font-semibold text-[#1a1a2e] mb-8 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center"><i class="fas fa-graduation-cap text-[#0ea5e9]"></i></span>
+              Education
+            </h3>
+            <div class="relative pl-8">
+              <div class="timeline-line"></div>
+
+
+              <div class="mb-10 relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">M.Eng - Cloud Computing</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">Chandigarh University (Pursuing)</p>
+                  <p class="text-[#64748b] text-sm mt-2">Latest developments and research work on Cloud Computing Technologies.</p>
+                </div>
+              </div>
+
+              <div class="mb-10 relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">Major in Artificial Intelligence</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">IIT Ropar</p>
+                </div>
+              </div>
+
+              <div class="mb-10 relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">B.Tech - Computer Science</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">Institute of Engineering & Management, Kolkata</p>
+                </div>
+              </div>
+
+              <div class="relative">
+                <div class="timeline-dot absolute -left-[25px] top-1"></div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 card-hover">
+                  <h4 class="font-semibold text-[#1a1a2e]">Higher & Secondary School</h4>
+                  <p class="text-[#0ea5e9] text-sm font-medium mt-1">Bhavan's Netaji Subhash Chandra Bose Vidyaniketan</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Certifications & Publications -->
+        <div class="grid md:grid-cols-2 gap-8 mt-16">
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-xl font-display font-semibold text-[#1a1a2e] mb-6 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center"><i class="fas fa-certificate text-[#0ea5e9]"></i></span>
+              Certifications
+            </h3>
+            <div class="space-y-3 text-[#64748b]">
+              <p><span class="text-[#0ea5e9]">✓</span> <strong>AWS:</strong> Solutions Architect Professional, Solutions Architect Associate, Cloud Practitioner</p>
+              <p><span class="text-[#0ea5e9]">✓</span> <strong>Azure:</strong> Solutions Architect Expert, DevOps Engineer Expert, Administrator Associate</p>
+              <p><span class="text-[#0ea5e9]">✓</span> <strong>GCP:</strong> Professional Cloud Architect, Associate Cloud Engineer</p>
+              <p><span class="text-[#0ea5e9]">✓</span> <strong>Oracle Cloud:</strong> Foundations Associate</p>
+              <p><span class="text-[#0ea5e9]">✓</span> <strong>Other:</strong> Gremlin Certified Chaos Engineering Practitioner</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-display font-semibold text-[#1a1a2e] mb-6 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center"><i class="fas fa-book text-[#0ea5e9]"></i></span>
+              Publications
+            </h3>
+            <ul class="space-y-4">
+              <li><a href="https://doi.org/10.1002/9781119792253.ch7" target="_blank" class="text-[#0ea5e9] hover:underline text-sm">Security and Privacy of IoT Devices in Healthcare Systems</a></li>
+              <li><a href="https://ijcaes.smartsociety.org/volume1_issue4.pdf" target="_blank" class="text-[#0ea5e9] hover:underline text-sm">Next Generation Rainwater Harvesters</a></li>
+              <li><a href="https://doi.org/10.15864/ijelts.2315" target="_blank" class="text-[#0ea5e9] hover:underline text-sm">Technology Assistance in Learning English</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hobbies, Languages & Availability -->
+        <div class="grid md:grid-cols-3 gap-8 mt-8">
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-lg font-display font-semibold text-[#1a1a2e] mb-4 flex items-center gap-3">
+              <i class="fas fa-music text-[#0ea5e9]"></i> Hobbies
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Singing (Diploma)</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Painting (Diploma)</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Cooking</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Exploring</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Travel</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Trekking</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Gaming</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Music</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Movies</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-lg font-display font-semibold text-[#1a1a2e] mb-4 flex items-center gap-3">
+              <i class="fas fa-language text-[#0ea5e9]"></i> Languages
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">English (Excellent)</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Bengali (Excellent)</span>
+              <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Hindi (Excellent)</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-lg font-display font-semibold text-[#1a1a2e] mb-4 flex items-center gap-3">
+              <i class="fas fa-clock text-[#0ea5e9]"></i> Availability
+            </h3>
+            <p class="text-[#64748b] text-sm mb-3">Working Hours:</p>
+            <p class="text-[#1a1a2e] font-semibold">24 Hours Available</p>
+            <p class="text-[#64748b] text-sm mt-4">Project Completion:</p>
+            <p class="text-[#1a1a2e] font-semibold">100% Success Rate</p>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 mt-8" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-display font-semibold text-[#1a1a2e] mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center"><i class="fas fa-users text-[#0ea5e9]"></i></span>
+            Soft Skills
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Leadership</span>
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Time Management</span>
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Problem Solving</span>
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Adaptability</span>
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Teamwork</span>
+            <span class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm text-[#64748b]">Creative Thinking</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-[#fafbfc]">
+      <div class="max-w-2xl mx-auto px-6 text-center">
+        <div data-aos="fade-up">
+          <span class="section-label">Contact</span>
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-[#1a1a2e] mt-3">Let's Connect</h2>
+          <p class="text-[#64748b] mt-4 mb-12">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-10 border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-paper-plane text-[#0ea5e9] text-2xl"></i>
+          </div>
+          <p class="text-[#64748b] mb-8">Feel free to reach out via email or Telegram.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:contact@subhradip.xyz" class="btn-primary w-full sm:w-auto justify-center">
+              <i class="fas fa-envelope"></i> Say Hello
+            </a>
+            <a href="https://t.me/socialistalex" target="_blank" class="bg-[#229ED9] text-white px-6 py-3.5 rounded-xl font-medium transition-all hover:bg-[#1d8bc5] hover:-translate-y-1 flex items-center gap-2 w-full sm:w-auto justify-center">
+              <i class="fab fa-telegram-plane"></i> Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-slate-800 text-slate-300 py-12">
-    <div class="container mx-auto px-6 text-center">
-        <h3 class="text-2xl font-bold text-white font-raleway">Subhradip Debnath</h3>
-        <p class="mt-2 text-slate-400">Singer, Painter, Solutions Architect and Cloud Engineer</p>
-        <div class="mt-6 flex justify-center space-x-6">
-            <a href="https://twitter.com/subh_official" target="_blank" class="hover:text-indigo-400 transition duration-300 text-xl"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/thesubhradip/" target="_blank" class="hover:text-indigo-400 transition duration-300 text-xl"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/subhradip_official/" target="_blank" class="hover:text-indigo-400 transition duration-300 text-xl"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p class="mt-8 text-sm text-slate-500">&copy; Copyright Subhradip. All Rights Reserved. Designed with ❤️.</p>
+  <footer class="bg-gradient-to-b from-[#fafbfc] to-[#f1f5f9] border-t border-gray-200 py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-display font-semibold text-[#1a1a2e]">Subhradip Debnath</h3>
+      <p class="text-[#64748b] mt-2">Singer, Painter, Solutions Architect & Cloud Engineer</p>
+      <div class="flex items-center justify-center gap-3 mt-6">
+        <a href="https://twitter.com/subh_official" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/thesubhradip/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/subhradip_official/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="text-sm text-[#94a3b8] mt-8">&copy; 2026 Subhradip Debnath. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true, offset: 50 });
 
-    // Typed.js
     var typed = new Typed('#typed-text', {
       strings: ['Engineer.', 'Architect.', 'Tutor.', 'Enthusiast.'],
       typeSpeed: 70,
@@ -317,24 +554,16 @@
       loop: true,
       backDelay: 2000,
     });
-    
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-    
-    // Close mobile menu when a link is clicked
-    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
+    menuToggle.addEventListener('click', () => mobileMenu.classList.add('active'));
+    menuClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
   </script>
-
 </body>
 
 </html>
