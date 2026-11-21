@@ -4,10 +4,10 @@ current_phase: 0
 current_phase_name: no roadmap
 status: planning
 stopped_at: Quick task 261121-oi0 complete and pushed
-last_updated: "2026-11-21T12:10:42.194Z"
+last_updated: "2026-11-21T12:18:09.062Z"
 last_activity: 2026-11-21
 last_activity_desc: "Completed quick task 261121-oi0: remove the project completion card from the availability section and push"
-state_head: 4b3fd2dec611ed7c123c3b05d169b58ecd43e16f
+state_head: f1121d5f8e537e29193b2d6416ad025e6672edbf
 progress:
   total_phases: 0
   completed_phases: 0
@@ -30,7 +30,7 @@ No `.planning/PROJECT.md` yet — the GSD project has not been initialised for t
 Phase: 0 of 0 (no roadmap)
 Plan: 0 of 0 in current phase
 Status: Ready to plan
-Last activity: 2026-11-21 — Completed quick task 261121-oi0: remove the project completion card from the availability section and push
+Last activity: 2026-11-21 — Completed quick task 261121-ooi: remove the GPA figures and the Availability working-hours section, then push
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -77,6 +77,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 261121-oi0 | Remove the project completion card from the availability section and push | 2026-11-21 | 4b3fd2d | [261121-oi0-remove-project-completion-card](./quick/261121-oi0-remove-project-completion-card/) |
+| 261121-ooi | Remove the GPA figures and the Availability working hours section from the portfolio, then push | 2026-11-21 | f1121d5 | [261121-ooi-remove-gpas-and-availability](./quick/261121-ooi-remove-gpas-and-availability/) |
 
 ## Deferred Items
 
@@ -88,6 +89,6 @@ Items acknowledged and deferred at milestone close, most recent first:
 
 ## Session Continuity
 
-Last session: 2026-11-21 12:30
-Stopped at: Quick task 261121-oi0 complete and pushed
+Last session: 2026-11-21 12:45
+Stopped at: Quick task 261121-ooi complete and pushed
 Resume file: None
