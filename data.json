@@ -1,111 +1,189 @@
 {
-    "active": "true",
-    "about": {
-      "description": "A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.",
-      "certifications": ["AWS", "GCP", "Microsoft Azure", "Oracle Cloud"]
+  "active": "true",
+  "about": {
+    "description": "A fervently optimistic Cloud Architect, driven by a passion for evolving Cloud Architecture, embraces each day to learn and grow anew.",
+    "certifications": ["AWS", "GCP", "Microsoft Azure", "Oracle Cloud", "Anthropic"]
+  },
+  "contact": {
+    "email": "contact@subhradip.xyz",
+    "mobile": "+91-912-3068-376",
+    "portfolio": "subhradip.xyz",
+    "github": "github.com/debnathsubhradip",
+    "linkedin": "linkedin.com/in/thesubhradip/",
+    "twitter": "twitter.com/subh_official",
+    "instagram": "instagram.com/subhradip_official",
+    "telegram": "t.me/socialistalex",
+    "location": "Kolkata, India"
+  },
+  "ieee": {
+    "status": "true",
+    "membership": "IEEE Member",
+    "society": "IEEE Computer Society",
+    "contact": "subhradip@ieee.org"
+  },
+  "education": [
+    {
+      "degree": "Master of Business Administration",
+      "specialization": "Business Analytics",
+      "university": "OP Jindal Global University",
+      "location": "Haryana, India",
+      "status": "Pursuing"
     },
-    "ieee": {
-      "status": "true",
-      "membership": "IEEE Member",
-      "society": "IEEE Computer Society",
-      "contact": "subhradip@ieee.org"
+    {
+      "degree": "Master of Engineering",
+      "specialization": "Computer Science Engineering",
+      "university": "Chandigarh University",
+      "location": "Chandigarh, India",
+      "cgpa": 8.6
     },
-    "education": [
-      {
-        "degree": "Master of Engineering",
-        "specialization": "Cloud Computing",
-        "university": "Chandigarh University"
-      },
-      {
-        "degree": "Bachelor of Technology",
-        "field": "Computer Science Engineering",
-        "university": "Institute of Engineering & Management, Kolkata",
-        "cgpa": 8.9
-      },
-      {
-        "degree": "Higher Secondary AISSCE",
-        "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
-        "cgpa": 9.4
-      },
-      {
-        "degree": "Secondary AISSE",
-        "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
-        "cgpa": 9.6
-      }
-    ],
-    "languages": [
-      {"name": "English", "proficiency": "Excellent"},
-      {"name": "Bengali", "proficiency": "Excellent"},
-      {"name": "Hindi", "proficiency": "Excellent"}
-    ],
-    "hobbies": [
-      {"name": "Singing", "credential": "Diploma"},
-      {"name": "Painting", "credential": "Diploma"},
-      {"name": "Gaming", "type": "FPS and Mobile"}
-    ],
-    "publications": [
-      {
-        "title": "Technology Assistance in Learning English",
-        "doi": "https://doi.org/10.15864/ijelts.2315"
-      },
-      {
-        "title": "Next Generation Rainwater Harvesters and Smart Ground Water Replenishment",
-        "doi": "https://ijcaes.smartsociety.org/volume1_issue4.pdf"
-      },
-      {
-        "title": "Security and Privacy of IoT Devices in Healthcare Systems",
-        "doi": "https://doi.org/10.1002/9781119792253.ch7"
-      }
-    ],
-    "experience": [
-      {
-        "role": "Software Developer (Research, AWS)",
-        "company": "Tata Consultancy Services Limited, Kolkata",
-        "duration": "2022 - Present"
-      },
-      {
-        "role": "Community Builder",
-        "company": "Amazon Web Services, Remote",
-        "duration": "2021 - Present"
-      },
-      {
-        "role": "Software Engineer Intern",
-        "company": "Hloov, Intern, Remote",
-        "duration": "2021 - 2021"
-      },
-      {
-        "role": "Cloud Security Associate",
-        "company": "Virtually Testing Foundation, Intern, Remote",
-        "duration": "2021 - 2021"
-      },
-      {
-        "role": "Systems Engineer Intern",
-        "company": "Haldia Dock Complex, Intern, Haldia",
-        "duration": "2021 - 2021"
-      },
-      {
-        "role": "Campus Manager",
-        "company": "Geeks for Geeks, Remote",
-        "duration": "2020 - 2021"
-      },
-      {
-        "role": "Systems Engineer Intern",
-        "company": "Deblines Pvt Ltd, Intern, Haldia",
-        "duration": "2019 - 2019"
-      }
-    ],
-    "certifications": [
-      {"name": "Microsoft Azure Fundamentals"},
-      {"name": "Microsoft Azure Administrator (AZ104)"},
-      {"name": "Microsoft Azure DevOps Engineer Expert (AZ400)"},
-      {"name": "Microsoft Azure Solutions Architect Expert (AZ305)"},
-      {"name": "AWS Certified Cloud Practitioner"},
-      {"name": "AWS Solutions Architect Associate"},
-      {"name": "AWS Solutions Architect Professional"},
-      {"name": "Google Cloud Certified Associate Cloud Engineer"},
-      {"name": "Google Cloud Certified Professional Cloud Architect"},
-      {"name": "Gremlin Certified Chaos Engineering Practitioner"},
-      {"name": "Oracle Cloud Infrastructure 2023 Certified Foundations Associate"}
-    ]
-  }
-  
+    {
+      "degree": "Major in Artificial Intelligence",
+      "university": "Indian Institute of Technology Ropar",
+      "location": "Ropar, India",
+      "cgpa": 5.25
+    },
+    {
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science Engineering",
+      "university": "Maulana Abul Kalam Azad University of Technology (formerly WBUT)",
+      "location": "Kolkata, India",
+      "cgpa": 8.9
+    },
+    {
+      "degree": "Higher Secondary Certificate",
+      "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
+      "location": "Haldia, India",
+      "cgpa": 9.4
+    },
+    {
+      "degree": "Secondary Certificate",
+      "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
+      "location": "Haldia, India",
+      "cgpa": 9.6
+    }
+  ],
+  "languages": [
+    {"name": "English", "proficiency": "Excellent"},
+    {"name": "Bengali", "proficiency": "Excellent"},
+    {"name": "Hindi", "proficiency": "Excellent"}
+  ],
+  "skills": {
+    "languages": ["Python", "JavaScript", "NodeJS", "ReactJS", "SQL", "Bash"],
+    "tools": ["Kubernetes", "Docker", "GIT", "SQLite", "Vertex AI", "AWS Bedrock", "DevOps", "CI/CD", "Terraform", "Ansible"],
+    "platforms": ["Linux", "Web", "Windows", "AWS", "GCP", "Azure", "Cloud Technologies", "Claude Code", "Open Code", "Agentic Coding"]
+  },
+  "soft_skills": [
+    {"name": "Leadership"},
+    {"name": "Event Management"},
+    {"name": "Writing"},
+    {"name": "Public Speaking"},
+    {"name": "Time Management"}
+  ],
+  "hobbies": [
+    {"name": "Singing", "credential": "Diploma"},
+    {"name": "Painting", "credential": "Diploma"},
+    {"name": "Cooking"},
+    {"name": "Exploring"},
+    {"name": "Travel"},
+    {"name": "Trekking"},
+    {"name": "Gaming"},
+    {"name": "Music"},
+    {"name": "Movies"}
+  ],
+  "publications": [
+    {
+      "title": "Technology Assistance in Learning English",
+      "doi": "https://doi.org/10.15864/ijelts.2315"
+    },
+    {
+      "title": "Next Generation Rainwater Harvesters and Smart Ground Water Replenishment",
+      "doi": "https://ijcaes.smartsociety.org/volume1_issue4.pdf"
+    },
+    {
+      "title": "Security and Privacy of IoT Devices in Healthcare Systems",
+      "doi": "https://doi.org/10.1002/9781119792253.ch7"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Engineer, Cloud Computing",
+      "company": "Tata Consultancy Services Limited",
+      "location": "Kolkata, India",
+      "duration": "2022 - Present",
+      "highlights": [
+        "End-to-End Platform Ownership: Architected, managed, and scaled a mission-critical enterprise auditing application end-to-end for a leading American healthcare Pharma giant, ensuring high availability, compliance, and reliability for over 100,000 active users.",
+        "Research and Development: Partnered directly with client stakeholders and product teams to design and deliver proof-of-concepts (PoCs), automating complex audit reconciliation and anomaly detection processes.",
+        "Cloud Infrastructure & Optimization: Spearheaded cloud-native infrastructure operations and microservices governance across multi-cloud environments, driving continuous performance tuning, security hardening, and system observability.",
+        "Learning and Team Building: Organized and led training sessions on cloud, AI, Agentic technologies and infrastructure design, successfully upskilling resources across verticals."
+      ]
+    },
+    {
+      "role": "Developer, Solutions Architect",
+      "company": "Tata Consultancy Services Limited",
+      "location": "Kolkata, India",
+      "duration": "2022",
+      "highlights": [
+        "Research and Development Role: Contributed to the planning, design, and architecture of a server-based Cloud Native Serverless Architecture for an American multinational corporation, successfully supporting a user base of 100,000 users.",
+        "Design and Development: Spearheaded the architectural transition from a monolithic framework to microservices across AWS, Azure, and GCP, which improved API latency by 26%. Led and documented the development of internal client tools utilizing services such as AWS Bedrock, Vertex AI, and Looker Studio.",
+        "Learning and Team Building: Organized and led training sessions on cloud technologies and infrastructure design, successfully upskilling a 12-person development team."
+      ]
+    },
+    {
+      "role": "Community Builder",
+      "company": "Amazon Web Services",
+      "location": "Remote",
+      "duration": "2021 - Present"
+    },
+    {
+      "role": "Software Engineer Intern",
+      "company": "Hloov",
+      "location": "Remote",
+      "duration": "2021 - 2021"
+    },
+    {
+      "role": "Cloud Security Associate",
+      "company": "Virtually Testing Foundation",
+      "location": "Remote",
+      "duration": "2021 - 2021"
+    },
+    {
+      "role": "Systems Engineer Intern",
+      "company": "Haldia Dock Complex",
+      "location": "Haldia, India",
+      "duration": "2021 - 2021"
+    },
+    {
+      "role": "Campus Manager",
+      "company": "Geeks for Geeks",
+      "location": "Remote",
+      "duration": "2020 - 2021"
+    },
+    {
+      "role": "Systems Engineer Intern",
+      "company": "Deblines Pvt Ltd",
+      "location": "Haldia, India",
+      "duration": "2019 - 2019"
+    }
+  ],
+  "availability": {
+    "working_hours": "24 Hours Available",
+    "project_completion": "100% Success Rate"
+  },
+  "certifications": [
+    {"name": "AWS Certified Cloud Practitioner"},
+    {"name": "AWS Certified AI Practitioner"},
+    {"name": "AWS Solutions Architect Associate"},
+    {"name": "AWS Solutions Architect Professional"},
+    {"name": "Microsoft Azure Fundamentals"},
+    {"name": "Microsoft Azure Administrator Associate"},
+    {"name": "Microsoft Azure DevOps Engineer Expert"},
+    {"name": "Microsoft Azure Solutions Architect Expert"},
+    {"name": "Google Certified Associate Cloud Engineer"},
+    {"name": "Google Certified Professional Cloud Architect"},
+    {"name": "Oracle Cloud Infrastructure Certified Foundations Associate"},
+    {"name": "Gremlin Certified Chaos Engineering Practitioner (GCCEP)"},
+    {"name": "Claude Certified Associate, Developer, Architect Foundations"},
+    {"name": "Claude Certified Architect Professional"},
+    {"name": "Certified Partner Specialist, Gemini Enterprise Agent Development"}
+  ]
+}
