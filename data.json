@@ -166,8 +166,7 @@
     }
   ],
   "availability": {
-    "working_hours": "24 Hours Available",
-    "project_completion": "100% Success Rate"
+    "working_hours": "24 Hours Available"
   },
   "certifications": [
     {"name": "AWS Certified Cloud Practitioner"},
