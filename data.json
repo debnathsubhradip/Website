@@ -33,33 +33,28 @@
       "degree": "Master of Engineering",
       "specialization": "Computer Science Engineering",
       "university": "Chandigarh University",
-      "location": "Chandigarh, India",
-      "cgpa": 8.6
+      "location": "Chandigarh, India"
     },
     {
       "degree": "Major in Artificial Intelligence",
       "university": "Indian Institute of Technology Ropar",
-      "location": "Ropar, India",
-      "cgpa": 5.25
+      "location": "Ropar, India"
     },
     {
       "degree": "Bachelor of Technology",
       "field": "Computer Science Engineering",
       "university": "Maulana Abul Kalam Azad University of Technology (formerly WBUT)",
-      "location": "Kolkata, India",
-      "cgpa": 8.9
+      "location": "Kolkata, India"
     },
     {
       "degree": "Higher Secondary Certificate",
       "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
-      "location": "Haldia, India",
-      "cgpa": 9.4
+      "location": "Haldia, India"
     },
     {
       "degree": "Secondary Certificate",
       "school": "Bhavan's Netaji Subhash Chandra Bose Vidyaniketan",
-      "location": "Haldia, India",
-      "cgpa": 9.6
+      "location": "Haldia, India"
     }
   ],
   "languages": [
@@ -165,9 +160,6 @@
       "duration": "2019 - 2019"
     }
   ],
-  "availability": {
-    "working_hours": "24 Hours Available"
-  },
   "certifications": [
     {"name": "AWS Certified Cloud Practitioner"},
     {"name": "AWS Certified AI Practitioner"},
